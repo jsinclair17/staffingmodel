@@ -60,11 +60,16 @@ class ProjectAdd:
         innovate_on_shore = 0.2
         innovate_off_shore = 0.1
         innovate_near_shore = 0.1
+        on_shore_cost = 210
+        near_shore_cost = 140
+        off_shore_cost = 110
         on_shore_score = (self.cost * funding_on_shore) + (timezone_on_shore * (11-self.timezone)) + (self.expertise*expertise_on_shore) + (self.laws*laws_on_shore) + (self.availability*response_on_shore) + (self.innovation * innovate_on_shore)
         near_shore_score = (funding_near_shore*(11-self.cost)) + (timezone_near_shore*self.timezone) + (expertise_near_shore*self.expertise) + (laws_near_shore*self.laws) + (response_near_shore*self.availability) + (innovate_near_shore*self.innovation)
         off_shore_score = (funding_off_shore*(11-self.cost)) + (timezone_off_shore*self.timezone) + (expertise_off_shore*self.expertise) + (laws_off_shore*self.laws) + (response_off_shore*self.availability) + (innovate_off_shore*self.innovation)
         on_shore_spread = on_shore_score/(on_shore_score + near_shore_score + off_shore_score)
         off_shore_spread = off_shore_score/(on_shore_score + near_shore_score + off_shore_score)
         near_shore_spread = near_shore_score/(on_shore_score + near_shore_score + off_shore_score)
-        return [('On Shore',(math.ceil(on_shore_spread*100)/100)), ('Off Shore', (math.ceil(off_shore_spread*100)/100)) , ('Near Shore', (math.ceil(near_shore_spread*100)/100))]
+        low_savings_calc = '{:.0%}'.format((1-(((on_shore_cost*on_shore_spread) + (off_shore_cost*off_shore_spread) + (near_shore_cost*near_shore_spread) )/ on_shore_cost))-0.05)
+        high_savings_calc = '{:.0%}'.format((1-(((on_shore_cost*on_shore_spread) + (off_shore_cost*off_shore_spread) + (near_shore_cost*near_shore_spread) )/ on_shore_cost))+0.05) 
+        return [[('On Shore',round(on_shore_spread,2)), ('Off Shore', round(off_shore_spread,2)) , ('Near Shore', round(near_shore_spread,2))],(low_savings_calc, high_savings_calc)]
        

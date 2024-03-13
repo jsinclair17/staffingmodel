@@ -147,11 +147,12 @@ def set_value():
     st.session_state['innovate'] = 1
     #st.session_state['scalable'] = 1
     st.write(f'Submission was added successfully')
-
-testresult = st.button(label="Submit", on_click=set_value)
 st.divider()
-df = pd.DataFrame(spread_val, columns=['Location','Spread'])
+df = pd.DataFrame(spread_val[0], columns=['Location','Spread'])
 st.bar_chart(df,  x='Location', color=['#384268'])
+st.write(f"Potential Savings utilizing Thought Logic's Ignition Staffing Model is {spread_val[1][0]} to {spread_val[1][1]}")
 
+st.write('Please submit selections if you would like to be contacted about your engagement')
+testresult = st.button(label="Submit", on_click=set_value)
 #if testresult:
 #    customer1.save()
