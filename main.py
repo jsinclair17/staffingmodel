@@ -16,7 +16,7 @@ st.image(my_logo)
 #st.title(':green[Jeff]')
 
 customer_name = st.text_input("Customer Name", key='customer')
-customer_address = st.text_input("Customer Address", key='address')
+customer_address = st.text_input("Customer Email Address", key='address')
 
 project_name = st.text_input("Project Name", key='projectname')
 project_type = st.selectbox("Project Type", ["Data Engineering","Data Migration","Pipelines and Intergration","Data Story Telling"
