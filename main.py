@@ -23,7 +23,7 @@ st.image(my_logo)
 # project_type = st.selectbox("Project Type", ["Data Engineering","Data Migration","Pipelines and Intergration","Data Story Telling"
 # ,"Application Development","Testing/ Functional UAT"], key='projecttype') 
 
-st.divider()
+#st.divider()
 project_area_names_cost = st.slider("Funding Availability", min_value=1, max_value=5, help='Your enagagment funding level has been allocated', key='cost')
 # """ if project_area_names_cost <3:
 #     st.write('Conservative Spend')
@@ -35,7 +35,7 @@ project_area_names_cost = st.slider("Funding Availability", min_value=1, max_val
 #     st.write('Budget Contingency Available')
 # else:
 #     st.write('Large Investment Made') """
-st.divider()
+#st.divider()
 project_area_names_speed = st.slider("Go To Market Strategy", min_value=1, max_value=5, help='Describe the level of planning to deliver product', key='speed')
 # """ if project_area_names_speed <3:
 #     st.write('Proof of Concept')
@@ -47,7 +47,7 @@ project_area_names_speed = st.slider("Go To Market Strategy", min_value=1, max_v
 #     st.write('Scaling Strategy Development')
 # else:
 #     st.write('Full Feature Launch') """
-st.divider()
+#st.divider()
 #project_area_names_criticallity = st.slider("Criticallity (Org Impact)", min_value=1, max_value=10, key='critical')
 project_area_names_tz = st.slider("Time Zone Coordination", min_value=1, max_value=5, help='Describe the need for resources to be time zone aligned' ,key='timezone')
 # """ if project_area_names_tz <3:
@@ -60,7 +60,7 @@ project_area_names_tz = st.slider("Time Zone Coordination", min_value=1, max_val
 #     st.write('Alignment Required for Most Deliverables')
 # else:
 #     st.write('Required') """
-st.divider()
+#st.divider()
 project_area_names_complexity = st.slider("Team Size", min_value=1, max_value=5, help='Amount of capacity needed to support the initiative' ,key='complex')
 # """ if project_area_names_complexity <3:
 #     st.write('Individual Contributor')
@@ -72,7 +72,7 @@ project_area_names_complexity = st.slider("Team Size", min_value=1, max_value=5,
 #     st.write('Functional Project Team with Advisory Support')
 # else:
 #     st.write('Large Program Team') """
-st.divider()
+#st.divider()
 project_area_names_expertise = st.slider("Expertise", min_value=1, max_value=5, help='Skillset necessary for successful delivery of the initiative', key='expert')
 # """ if project_area_names_expertise <5:
 #     st.write('Functional Expert')
@@ -80,7 +80,7 @@ project_area_names_expertise = st.slider("Expertise", min_value=1, max_value=5, 
 #     st.write('Skilled Practicioner')
 # else:
 #     st.write('Subject Matter Expert') """
-st.divider()
+#st.divider()
 project_area_names_laws = st.slider("Laws & Regulation", min_value=1, max_value=5, help='Barriers for using offshore resources for work', key='laws')
 # """ if project_area_names_laws <3:
 #     st.write('Lenient')
@@ -92,7 +92,7 @@ project_area_names_laws = st.slider("Laws & Regulation", min_value=1, max_value=
 #     st.write('Highly Regulated')
 # else:
 #     st.write('Restrictive') """
-st.divider()
+#st.divider()
 project_area_names_accessibility = st.slider("Immediate Response Tolerance", min_value=1, max_value=5, help='Communication promptness required', key="accessible")
 # """ if project_area_names_accessibility <3:
 #     st.write('Within 1-2 Business Days')
@@ -104,7 +104,7 @@ project_area_names_accessibility = st.slider("Immediate Response Tolerance", min
 #     st.write('Within 2-4 hours during Operating Hours')
 # else:
 #     st.write('Fully accessible during Operating Hours') """
-st.divider()
+#st.divider()
 project_area_names_innovate = st.slider("Innovation & Process Maturity", min_value=1, max_value=5, help='Describe the need to be more Strategic or Tactical', key='innovate')
 # """ if project_area_names_innovate <3:
 #     st.write('Routine')
@@ -116,7 +116,7 @@ project_area_names_innovate = st.slider("Innovation & Process Maturity", min_val
 #     st.write('Transformational Innovation')
 # else:
 #     st.write('Disruptor') """
-st.divider()
+#st.divider()
 #project_area_names_scalabilty = st.slider("Scalability", min_value=1, max_value=10, key='scalable')
 #staff_name = st.text_input("Staff Name")
 #staff_type_name = st.selectbox("Staff Type", ["Engineer", "Manager", "Designer"])
