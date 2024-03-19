@@ -11,10 +11,10 @@ class ProjectAdd:
                 , availability, innovation
                 #, scalability
                 ):
-        """ self.name = name
-        self.address = address
-        self.projectname = projectname
-        self.projecttype = projecttype """
+        # """ self.name = name
+        # self.address = address
+        # self.projectname = projectname
+        # self.projecttype = projecttype """
         self.cost = cost
         self.time_to_market = time_to_market
         #self.criticallity = criticallity
