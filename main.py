@@ -4,14 +4,14 @@ from PIL import Image
 import pandas as pd
 # You can always call this function where ever you want
 
-def add_logo(logo_path, width, height):
-    """Read and return a resized logo"""
-    logo = Image.open(logo_path)
-    modified_logo = logo.resize((width, height))
-    return modified_logo
+# def add_logo(logo_path, width, height):
+#     """Read and return a resized logo"""
+#     logo = Image.open(logo_path)
+#     modified_logo = logo.resize((width, height))
+#     return modified_logo
 
-my_logo = add_logo(logo_path="./TLLogo.png", width=800, height=100)
-st.image(my_logo)
+# my_logo = add_logo(logo_path="./TLLogo.png", width=800, height=100)
+# st.image(my_logo)
 #st.set_page_config(layout="centered")
 #st.title(':green[Jeff]')
 
