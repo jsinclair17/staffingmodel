@@ -24,7 +24,7 @@ st.image(my_logo)
 # ,"Application Development","Testing/ Functional UAT"], key='projecttype') 
 
 #st.divider()
-project_area_names_cost = st.slider("Funding Availability", min_value=1, max_value=5, help='Your enagagment funding level has been allocated', key='cost')
+project_area_names_cost = st.slider("Cost", min_value=1, max_value=5, help='Your enagagment funding level has been allocated', key='cost')
 # """ if project_area_names_cost <3:
 #     st.write('Conservative Spend')
 # elif project_area_names_cost >=3 and project_area_names_cost <5:
@@ -36,7 +36,7 @@ project_area_names_cost = st.slider("Funding Availability", min_value=1, max_val
 # else:
 #     st.write('Large Investment Made') """
 #st.divider()
-project_area_names_speed = st.slider("Go To Market Strategy", min_value=1, max_value=5, help='Describe the level of planning to deliver product', key='speed')
+project_area_names_speed = st.slider("Speed", min_value=1, max_value=5, help='Describe the level of planning to deliver product', key='speed')
 # """ if project_area_names_speed <3:
 #     st.write('Proof of Concept')
 # elif project_area_names_speed >=3 and project_area_names_speed <5:
@@ -49,7 +49,7 @@ project_area_names_speed = st.slider("Go To Market Strategy", min_value=1, max_v
 #     st.write('Full Feature Launch') """
 #st.divider()
 #project_area_names_criticallity = st.slider("Criticallity (Org Impact)", min_value=1, max_value=10, key='critical')
-project_area_names_tz = st.slider("Time Zone Coordination", min_value=1, max_value=5, help='Describe the need for resources to be time zone aligned' ,key='timezone')
+project_area_names_tz = st.slider("Timezone Critical", min_value=1, max_value=5, help='Describe the need for resources to be time zone aligned' ,key='timezone')
 # """ if project_area_names_tz <3:
 #     st.write('Minimal Overlap Required')
 # elif project_area_names_tz >=3 and project_area_names_tz <5:
@@ -61,7 +61,7 @@ project_area_names_tz = st.slider("Time Zone Coordination", min_value=1, max_val
 # else:
 #     st.write('Required') """
 #st.divider()
-project_area_names_complexity = st.slider("Team Size", min_value=1, max_value=5, help='Amount of capacity needed to support the initiative' ,key='complex')
+project_area_names_complexity = st.slider("Complexity", min_value=1, max_value=5, help='Amount of capacity needed to support the initiative' ,key='complex')
 # """ if project_area_names_complexity <3:
 #     st.write('Individual Contributor')
 # elif project_area_names_complexity >=3 and project_area_names_complexity <5:
@@ -73,7 +73,7 @@ project_area_names_complexity = st.slider("Team Size", min_value=1, max_value=5,
 # else:
 #     st.write('Large Program Team') """
 #st.divider()
-project_area_names_expertise = st.slider("Expertise", min_value=1, max_value=5, help='Skillset necessary for successful delivery of the initiative', key='expert')
+project_area_names_expertise = st.slider("Skill Level", min_value=1, max_value=5, help='Skillset necessary for successful delivery of the initiative', key='expert')
 # """ if project_area_names_expertise <5:
 #     st.write('Functional Expert')
 # elif project_area_names_expertise >=5 and project_area_names_expertise <10:
@@ -93,7 +93,7 @@ project_area_names_laws = st.slider("Laws & Regulation", min_value=1, max_value=
 # else:
 #     st.write('Restrictive') """
 #st.divider()
-project_area_names_accessibility = st.slider("Immediate Response Tolerance", min_value=1, max_value=5, help='Communication promptness required', key="accessible")
+project_area_names_accessibility = st.slider("Response Time", min_value=1, max_value=5, help='Communication promptness required', key="accessible")
 # """ if project_area_names_accessibility <3:
 #     st.write('Within 1-2 Business Days')
 # elif project_area_names_accessibility >=3 and project_area_names_accessibility <5:
@@ -105,7 +105,7 @@ project_area_names_accessibility = st.slider("Immediate Response Tolerance", min
 # else:
 #     st.write('Fully accessible during Operating Hours') """
 #st.divider()
-project_area_names_innovate = st.slider("Innovation & Process Maturity", min_value=1, max_value=5, help='Describe the need to be more Strategic or Tactical', key='innovate')
+project_area_names_innovate = st.slider("Advanced Tech", min_value=1, max_value=5, help='Describe the need to be more Strategic or Tactical', key='innovate')
 # """ if project_area_names_innovate <3:
 #     st.write('Routine')
 # elif project_area_names_innovate >=3 and project_area_names_innovate <5:
