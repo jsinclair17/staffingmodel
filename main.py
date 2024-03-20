@@ -7,12 +7,12 @@ import altair as alt
 
 # Function to create bar chart
 def create_bar_chart(df):
-    chart = alt.Chart(df.reset_index()).mark_bar( size = 1,color='#384268').encode(
+    chart = alt.Chart(df.reset_index()).mark_bar( size = 20,color='#384268').encode(
         x=alt.X('Location', sort=list(df.index)),  # Sorting by index
         y=alt.Y('Project Staffing Percentage', axis=alt.Axis(format='%')),
     ).properties(
-        width=600,
-        height=400
+        width=400,
+        height=200
     )
     return chart
 
