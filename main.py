@@ -166,6 +166,7 @@ def set_value():
     #st.session_state['scalable'] = 1
     st.write(f'Submission was added successfully')
 st.divider()
+st.write(f"Potential Savings utilizing Thought Logic's Ignition Staffing Model is {spread_val[1][0]} to {spread_val[1][1]}")
 df = pd.DataFrame(spread_val[0], columns=['Location','Spread'])
 # Update and display bar chart
 updated_bar_chart = create_bar_chart(df)
