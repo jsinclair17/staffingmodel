@@ -17,7 +17,7 @@ def create_bar_chart(df):
     ).configure_mark(
         opacity=0.8
     )
-    return chart
+    return chart + chart.mark_text()
 
 def add_logo(logo_path, width, height):
     """Read and return a resized logo"""
