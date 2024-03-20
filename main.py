@@ -12,7 +12,7 @@ def add_logo(logo_path, width, height):
 
 my_logo = add_logo(logo_path="./TLLogo.png", width=800, height=100)
 st.image(my_logo)
-st.write(f"Potential Savings utilizing Thought Logic's Ignition Staffing Model is {spread_val[1][0]} to {spread_val[1][1]}")
+
 #st.set_page_config(layout="centered")
 #st.title(':green[Jeff]')
 
@@ -156,7 +156,7 @@ def set_value():
 st.divider()
 df = pd.DataFrame(spread_val[0], columns=['Location','Spread'])
 st.bar_chart(df,  x='Location', color=['#384268'])
-
+st.write(f"Potential Savings utilizing Thought Logic's Ignition Staffing Model is {spread_val[1][0]} to {spread_val[1][1]}")
 
 #st.write('Please submit selections if you would like to be contacted about your engagement')
 #testresult = st.button(label="Submit", on_click=set_value)
