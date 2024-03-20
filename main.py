@@ -2,7 +2,19 @@ import streamlit as st
 import staffingdb as stdb
 from PIL import Image
 import pandas as pd
+import altair as alt
 # You can always call this function where ever you want
+
+# Function to create bar chart
+def create_bar_chart(df):
+    chart = alt.Chart(df.reset_index()).mark_bar().encode(
+        x=alt.X('Location', sort=list(df.index)),  # Sorting by index
+        y=alt.Y('Spread', axis=alt.Axis(format='%')),
+    ).properties(
+        width=600,
+        height=400
+    )
+    return chart
 
 def add_logo(logo_path, width, height):
     """Read and return a resized logo"""
@@ -155,8 +167,10 @@ def set_value():
     st.write(f'Submission was added successfully')
 st.divider()
 df = pd.DataFrame(spread_val[0], columns=['Location','Spread'])
-st.bar_chart(df,  x='Location', color=['#384268'])
-st.write(f"Potential Savings utilizing Thought Logic's Ignition Staffing Model is {spread_val[1][0]} to {spread_val[1][1]}")
+# Update and display bar chart
+updated_bar_chart = create_bar_chart(df)
+st.subheader('Updated Bar Chart')
+st.altair_chart(updated_bar_chart, use_container_width=True)
 
 #st.write('Please submit selections if you would like to be contacted about your engagement')
 #testresult = st.button(label="Submit", on_click=set_value)
