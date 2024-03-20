@@ -4,7 +4,9 @@ import math
 
 class ProjectAdd:
     def __init__(self, 
-                 name, address, projectname, projecttype, 
+                 name
+                 #, address
+                 , projectname, projecttype, 
                  cost, time_to_market
                  #, criticallity
                 , timezone, complexity, expertise, laws
@@ -12,7 +14,7 @@ class ProjectAdd:
                 #, scalability
                 ):
         self.name = name
-        self.address = address
+        #self.address = address
         self.projectname = projectname
         self.projecttype = projecttype
         self.cost = cost
@@ -35,7 +37,9 @@ class ProjectAdd:
                 , availability int, innovation int)''')
         c.execute('''INSERT INTO projectdetail (name, address, projectname, projecttype, cost, time_to_market, timezone, complexity, expertise, laws
                 , availability, innovation) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''', 
-                  (self.name, self.address, self.projectname, self.projecttype, self.cost, self.time_to_market
+                  (self.name
+                   #, self.address
+                   , self.projectname, self.projecttype, self.cost, self.time_to_market
                    #, self.criticallity
                    , self.timezone, self.complexity, self.expertise
                    , self.laws, self.availability, self.innovation

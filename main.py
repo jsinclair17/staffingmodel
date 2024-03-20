@@ -30,7 +30,7 @@ st.image(my_logo)
 
 
 customer_name = st.text_input("Customer Name", key='customer')
-customer_address = st.text_input("Customer Email Address", key='address')
+#customer_address = st.text_input("Customer Email Address", key='address')
 
 project_name = st.text_input("Project Name", key='projectname')
 project_type = st.selectbox("Project Type", ["Data Engineering","Data Migration","Pipelines and Intergration","Data Story Telling"
@@ -140,7 +140,9 @@ project_area_names_innovate = st.sidebar.slider("Advanced Tech", min_value=1, ma
 
 
 customer1 = stdb.ProjectAdd(
-    customer_name, customer_address, project_name, project_type, 
+    customer_name
+    #, customer_address
+    , project_name, project_type, 
     project_area_names_cost, project_area_names_speed
                             #, project_area_names_criticallity
                             , project_area_names_tz, project_area_names_complexity, project_area_names_expertise, project_area_names_laws, project_area_names_accessibility, project_area_names_innovate
