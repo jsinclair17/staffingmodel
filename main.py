@@ -9,7 +9,7 @@ import altair as alt
 def create_bar_chart(df):
     chart = alt.Chart(df.reset_index()).mark_bar(color='#384268').encode(
         x=alt.X('Location', sort=list(df.index)),  # Sorting by index
-        y=alt.Y('Spread', axis=alt.Axis(format='%')),
+        y=alt.Y('Project Staffing Percentage', axis=alt.Axis(format='%')),
     ).properties(
         width=600,
         height=400
@@ -167,7 +167,7 @@ def set_value():
     st.write(f'Submission was added successfully')
 st.divider()
 st.write(f"Potential Savings utilizing Thought Logic's Ignition Staffing Model is {spread_val[1][0]} to {spread_val[1][1]}")
-df = pd.DataFrame(spread_val[0], columns=['Location','Spread'])
+df = pd.DataFrame(spread_val[0], columns=['Location','Project Staffing Percentage'])
 # Update and display bar chart
 updated_bar_chart = create_bar_chart(df)
 #st.subheader('Updated Bar Chart')
