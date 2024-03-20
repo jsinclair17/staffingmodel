@@ -14,6 +14,8 @@ def create_bar_chart(df):
     ).properties(
         width=300,
         height=400
+    ).configure_mark(
+        opacity=0.8
     )
     return chart
 
