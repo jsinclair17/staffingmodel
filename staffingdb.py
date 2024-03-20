@@ -73,5 +73,5 @@ class ProjectAdd:
         near_shore_spread = near_shore_score/(on_shore_score + near_shore_score + off_shore_score)
         low_savings_calc = '{:.0%}'.format((1-(((on_shore_cost*on_shore_spread) + (off_shore_cost*off_shore_spread) + (near_shore_cost*near_shore_spread) )/ on_shore_cost))-0.05)
         high_savings_calc = '{:.0%}'.format((1-(((on_shore_cost*on_shore_spread) + (off_shore_cost*off_shore_spread) + (near_shore_cost*near_shore_spread) )/ on_shore_cost))+0.05) 
-        return [[('On Shore',round(on_shore_spread,2)), ('Off Shore', round(off_shore_spread,2)) , ('Near Shore', round(near_shore_spread,2))],(low_savings_calc, high_savings_calc)]
+        return [[('On Shore',on_shore_spread), ('Off Shore',off_shore_spread) , ('Near Shore', near_shore_spread)],(low_savings_calc, high_savings_calc)]
        
