@@ -7,7 +7,7 @@ import altair as alt
 
 # Function to create bar chart
 def create_bar_chart(df):
-    chart = alt.Chart(df.reset_index()).mark_bar().encode(
+    chart = alt.Chart(df.reset_index()).encode(
         x=alt.X('Location', sort=list(df.index)),  # Sorting by index
         y=alt.Y('Project Staffing Percentage', axis=alt.Axis(format='%')),
         text='Project Staffing Percentage'
@@ -17,7 +17,7 @@ def create_bar_chart(df):
     ).configure_mark(
         opacity=0.8
     )
-    return chart + chart.mark_text()
+    return chart.mark_bar() + chart.mark_text()
 
 def add_logo(logo_path, width, height):
     """Read and return a resized logo"""
