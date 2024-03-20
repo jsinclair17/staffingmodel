@@ -27,15 +27,15 @@ project_type = st.selectbox("Project Type", ["Data Engineering","Data Migration"
 st.sidebar.title('Change Slider Values')
 project_area_names_cost = st.sidebar.slider("Cost", min_value=1, max_value=5, help='Your enagagment funding level has been allocated', key='cost')
 if project_area_names_cost <3:
-    st.write('Conservative Spend')
+    st.sidebar.write('Conservative Spend')
 elif project_area_names_cost >=3 and project_area_names_cost <5:
-    st.write('Business Case Required for Additional Spend')
+    st.sidebar.write('Business Case Required for Additional Spend')
 elif project_area_names_cost >=5 and project_area_names_cost <7:
-    st.write('Discretionary Budget Available')
+    st.sidebar.write('Discretionary Budget Available')
 elif project_area_names_cost >=7 and project_area_names_cost <10:
-    st.write('Budget Contingency Available')
+    st.sidebar.write('Budget Contingency Available')
 else:
-    st.write('Large Investment Made')
+    st.sidebar.write('Large Investment Made')
 #st.divider()
 project_area_names_speed = st.sidebar.slider("Speed", min_value=1, max_value=5, help='Describe the level of planning to deliver product', key='speed')
 if project_area_names_speed <3:
@@ -106,7 +106,7 @@ elif project_area_names_accessibility >=7 and project_area_names_accessibility <
 else:
     st.write('Fully accessible during Operating Hours')
 #st.divider()
-project_area_names_innovate = st.slider("Advanced Tech", min_value=1, max_value=5, help='Describe the need to be more Strategic or Tactical', key='innovate')
+project_area_names_innovate = st.sidebar.slider("Advanced Tech", min_value=1, max_value=5, help='Describe the need to be more Strategic or Tactical', key='innovate')
 if project_area_names_innovate <3:
     st.write('Routine')
 elif project_area_names_innovate >=3 and project_area_names_innovate <5:
