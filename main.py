@@ -12,7 +12,7 @@ def create_bar_chart(df):
         y=alt.Y('Project Staffing Percentage', axis=alt.Axis(format='%')),
         text='Project Staffing Percentage'
     )
-    return chart.mark_bar() + chart.mark_text(align='left', dx=2, format='.2f')
+    return chart.mark_bar() + chart.mark_text(align='center', dx=0, baseline='Top', )
 
 def add_logo(logo_path, width, height):
     """Read and return a resized logo"""
