@@ -11,8 +11,8 @@ def create_bar_chart(df):
         x=alt.X('Location', sort=list(df.index)),  # Sorting by index
         y=alt.Y('Project Staffing Percentage', axis=alt.Axis(format='%')),
     ).properties(
-        width=400,
-        height=200
+        width=300,
+        height=400
     )
     return chart
 
