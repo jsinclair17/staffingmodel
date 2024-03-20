@@ -11,13 +11,8 @@ def create_bar_chart(df):
         x=alt.X('Location', sort=list(df.index)),  # Sorting by index
         y=alt.Y('Project Staffing Percentage', axis=alt.Axis(format='%')),
         text='Project Staffing Percentage'
-    ).properties(
-        width=300,
-        height=400
-    ).configure_mark(
-        opacity=0.8
     )
-    return chart.mark_bar() + chart.mark_text()
+    return chart.mark_bar()
 
 def add_logo(logo_path, width, height):
     """Read and return a resized logo"""
