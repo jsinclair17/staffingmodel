@@ -9,10 +9,13 @@ import altair as alt
 def create_bar_chart(df):
     chart = alt.Chart(df.reset_index()).mark_bar().encode(
         x=alt.X('Location', sort=list(df.index)),  # Sorting by index
-        y=alt.Y('Project Staffing Percentage', axis=alt.Axis(format='%'))
+        y=alt.Y('Project Staffing Percentage', axis=alt.Axis(format='%')),
+        text=alt.Text('Value', format='.2f', color='white')
     ).properties(
         width=300,
         height=400
+    ).configure_mark(
+        opacity=0.8
     )
     return chart
 
