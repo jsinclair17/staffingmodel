@@ -9,10 +9,9 @@ import altair as alt
 def create_bar_chart(df):
     chart = alt.Chart(df.reset_index()).encode(
         x=alt.X('Location', sort=list(df.index)),  # Sorting by index
-        y=alt.Y('Project Staffing Percentage', axis=alt.Axis(format='%')),
-        color=alt.Color("#384268")
+        y=alt.Y('Project Staffing Percentage', axis=alt.Axis(format='%'))
     )
-    return chart.mark_bar() + chart.mark_text(baseline='top', fontSize=16, fontWeight="bold").encode(text=alt.Text('Project Staffing Percentage', format='.0%'), color=alt.value("white"))
+    return chart.mark_bar(color='#384268') + chart.mark_text(baseline='top', fontSize=16, fontWeight="bold").encode(text=alt.Text('Project Staffing Percentage', format='.0%'), color=alt.value("white"))
 
 def add_logo(logo_path, width, height):
     """Read and return a resized logo"""
