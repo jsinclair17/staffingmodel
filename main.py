@@ -170,7 +170,7 @@ st.write(f"Potential Savings utilizing Thought Logic's Ignition Staffing Model i
 df = pd.DataFrame(spread_val[0], columns=['Location','Spread'])
 # Update and display bar chart
 updated_bar_chart = create_bar_chart(df)
-st.subheader('Updated Bar Chart')
+#st.subheader('Updated Bar Chart')
 st.altair_chart(updated_bar_chart, use_container_width=True)
 
 #st.write('Please submit selections if you would like to be contacted about your engagement')
