@@ -7,7 +7,7 @@ import altair as alt
 
 # Function to create bar chart
 def create_bar_chart(df):
-    chart = alt.Chart(df.reset_index()).mark_bar().encode(
+    chart = alt.Chart(df.reset_index()).mark_bar(color='#384268').encode(
         x=alt.X('Location', sort=list(df.index)),  # Sorting by index
         y=alt.Y('Spread', axis=alt.Axis(format='%')),
     ).properties(
