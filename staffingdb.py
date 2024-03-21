@@ -91,7 +91,7 @@ class ProjectAdd:
             near_shore_spread = near_shore_score/(on_shore_score + near_shore_score + off_shore_score)
         if self.offshore_cb == True:
             off_shore_spread = off_shore_score/(on_shore_score + near_shore_score + off_shore_score)
-        elif self.offshore_cb == True and (self.timezone==5 or self.availability==5):
+        elif (self.timezone==5 or self.availability==5):
             off_shore_spread = 0
         elif self.offshore_cb == True and self.nearshore_cb == True:
             off_shore_spread = off_shore_score/(on_shore_score + near_shore_score + off_shore_score)
