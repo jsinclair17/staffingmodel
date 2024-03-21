@@ -52,20 +52,20 @@ class ProjectAdd:
 
     def getspread(self):
         funding_on_shore = 0.4
-        funding_off_shore = 0.7
         funding_near_shore = 0.5
+        funding_off_shore = 0.7
         timezone_on_shore = 0.2
-        timezone_off_shore = 0.1
         timezone_near_shore = 0.2
+        timezone_off_shore = 0.1
         # expertise_on_shore = 0.4
         # expertise_off_shore = 0.15
         # expertise_near_shore = 0.15
         laws_on_shore = 0.2
-        laws_off_shore = 0.1
         laws_near_shore = 0.1
+        laws_off_shore = 0.1
         response_on_shore = 0.2
+        response_near_shore = 0.2
         response_off_shore = 0.1
-        response_near_shore = 0.1
         # innovate_on_shore = 0.5
         # innovate_off_shore = 0.15
         # innovate_near_shore = 0.15
@@ -75,7 +75,7 @@ class ProjectAdd:
         on_shore_score = (self.cost * funding_on_shore) + (timezone_on_shore * self.timezone)  + (self.laws*laws_on_shore) + (self.availability*response_on_shore) 
         near_shore_score = (funding_near_shore*(5-self.cost)) + (timezone_near_shore*(self.timezone)) + (laws_near_shore*(5 - self.laws)) + (response_near_shore*(self.availability)) 
         off_shore_score = (funding_off_shore*(5-self.cost)) + (timezone_off_shore*(5 - self.timezone))  + (laws_off_shore*(5 - self.laws)) + (response_off_shore*(5 - self.availability)) 
-        if self.nearshore_cb == False and self.offshore_cb == False:
+        if (self.nearshore_cb == False and self.offshore_cb == False):
             on_shore_spread = 1
         elif (self.nearshore_cb == False and (self.timezone == 5 | self.availability ==5)):
             on_shore_spread = 1
