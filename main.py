@@ -35,7 +35,7 @@ project_type = st.selectbox("Project Type", ["Data Engineering","Data Migration"
 
 #st.divider()
 with st.sidebar:
-    st.title('Choose Staffing Location')
+    st.title('Choose Staffing Location /n All of our resources are fluent in English /n Near Shore is in Bogota, Columbia/n Off Shore is in Pakistan')
     col1, col2 = st.columns(2)
     nearshore_cb = col1.checkbox('Near Shore', value=False)
     offshore_cb = col2.checkbox('Off Shore', value=False)
