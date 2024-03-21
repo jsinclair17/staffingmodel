@@ -37,8 +37,8 @@ project_type = st.selectbox("Project Type", ["Data Engineering","Data Migration"
 with st.sidebar:
     st.title('Choose Staffing Location')
     col1, col2 = st.columns(2)
-    show_output = col1.checkbox('Near Shore', value=False)
-    show_plot = col2.checkbox('Off Shore', value=False)
+    nearshore_cb = col1.checkbox('Near Shore', value=False)
+    offshore_cb = col2.checkbox('Off Shore', value=False)
 st.sidebar.title('Choose Project Priorities')
 project_area_names_cost = st.sidebar.slider("Cost", min_value=1, max_value=5, help='Your enagagment funding level has been allocated', key='cost')
 # if project_area_names_cost <3:
@@ -147,7 +147,8 @@ customer1 = stdb.ProjectAdd(
     , project_name, project_type, 
     project_area_names_cost, project_area_names_speed
                             #, project_area_names_criticallity
-                            , project_area_names_tz, project_area_names_complexity, project_area_names_expertise, project_area_names_laws, project_area_names_accessibility, project_area_names_innovate
+                            , project_area_names_tz, project_area_names_complexity, project_area_names_expertise, project_area_names_laws, project_area_names_accessibility
+                            , project_area_names_innovate
                             #, project_area_names_scalabilty
                             )
 #customer1.save()
@@ -171,6 +172,7 @@ def set_value():
     st.write(f'Submission was added successfully')
 st.divider()
 st.write(f"Potential Savings utilizing Thought Logic's Ignition Staffing Model is {spread_val[1][0]} to {spread_val[1][1]}")
+st.write(nearshore_cb)
 df = pd.DataFrame(spread_val[0], columns=['Location','Project Staffing Percentage'])
 # Update and display bar chart
 updated_bar_chart = create_bar_chart(df)

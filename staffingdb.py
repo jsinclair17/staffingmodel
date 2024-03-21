@@ -10,7 +10,7 @@ class ProjectAdd:
                  cost, time_to_market
                  #, criticallity
                 , timezone, complexity, expertise, laws
-                , availability, innovation
+                , availability, innovation, nearshore_cb, offshore_cb
                 #, scalability
                 ):
         self.name = name
@@ -26,6 +26,8 @@ class ProjectAdd:
         self.laws = laws
         self.availability = availability
         self.innovation = innovation
+        self.nearshore_cb = nearshore_cb
+        self.offshore_cb = offshore_cb
         #self.scalability = scalability
 
     def save(self):
@@ -48,30 +50,30 @@ class ProjectAdd:
         conn.commit()
 
     def getspread(self):
-        funding_on_shore = 0.2
-        funding_off_shore = 0.6
-        funding_near_shore = 0.45
-        timezone_on_shore = 0.4
-        timezone_off_shore = 0.15
-        timezone_near_shore = 0.225
-        expertise_on_shore = 0.4
-        expertise_off_shore = 0.15
-        expertise_near_shore = 0.15
-        laws_on_shore = 0.6
-        laws_off_shore = 0.15
-        laws_near_shore = 0.15
-        response_on_shore = 0.5
-        response_off_shore = 0.075
-        response_near_shore = 0.225
-        innovate_on_shore = 0.5
-        innovate_off_shore = 0.15
-        innovate_near_shore = 0.15
+        funding_on_shore = 0.4
+        funding_off_shore = 0.7
+        funding_near_shore = 0.5
+        timezone_on_shore = 0.2
+        timezone_off_shore = 0.1
+        timezone_near_shore = 0.2
+        # expertise_on_shore = 0.4
+        # expertise_off_shore = 0.15
+        # expertise_near_shore = 0.15
+        laws_on_shore = 0.2
+        laws_off_shore = 0.1
+        laws_near_shore = 0.1
+        response_on_shore = 0.2
+        response_off_shore = 0.1
+        response_near_shore = 0.1
+        # innovate_on_shore = 0.5
+        # innovate_off_shore = 0.15
+        # innovate_near_shore = 0.15
         on_shore_cost = 210
         near_shore_cost = 140
         off_shore_cost = 110
-        on_shore_score = (self.cost * funding_on_shore) + (timezone_on_shore * self.timezone) + (self.expertise*expertise_on_shore) + (self.laws*laws_on_shore) + (self.availability*response_on_shore) + (self.innovation * innovate_on_shore)
-        near_shore_score = (funding_near_shore*(6-self.cost)) + (timezone_near_shore*(6 - self.timezone)) + (expertise_near_shore*self.expertise) + (laws_near_shore*(6 - self.laws)) + (response_near_shore*(6 - self.availability)) + (innovate_near_shore*self.innovation)
-        off_shore_score = (funding_off_shore*(6-self.cost)) + (timezone_off_shore*(5 - self.timezone)) + (expertise_off_shore*self.expertise) + (laws_off_shore*(6 - self.laws)) + (response_off_shore*(5 - self.availability)) + (innovate_off_shore*self.innovation)
+        on_shore_score = (self.cost * funding_on_shore) + (timezone_on_shore * self.timezone)  + (self.laws*laws_on_shore) + (self.availability*response_on_shore) 
+        near_shore_score = (funding_near_shore*(6-self.cost)) + (timezone_near_shore*(6 - self.timezone)) + (laws_near_shore*(6 - self.laws)) + (response_near_shore*(6 - self.availability)) 
+        off_shore_score = (funding_off_shore*(6-self.cost)) + (timezone_off_shore*(5 - self.timezone))  + (laws_off_shore*(6 - self.laws)) + (response_off_shore*(5 - self.availability)) 
         on_shore_spread = on_shore_score/(on_shore_score + near_shore_score + off_shore_score)
         off_shore_spread = off_shore_score/(on_shore_score + near_shore_score + off_shore_score)
         near_shore_spread = near_shore_score/(on_shore_score + near_shore_score + off_shore_score)
