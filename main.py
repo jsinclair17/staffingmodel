@@ -150,6 +150,7 @@ customer1 = stdb.ProjectAdd(
                             , project_area_names_tz, project_area_names_complexity, project_area_names_expertise, project_area_names_laws, project_area_names_accessibility
                             , project_area_names_innovate
                             #, project_area_names_scalabilty
+                            ,nearshore_cb, offshore_cb
                             )
 #customer1.save()
 spread_val = customer1.getspread()
@@ -172,7 +173,6 @@ def set_value():
     st.write(f'Submission was added successfully')
 st.divider()
 st.write(f"Potential Savings utilizing Thought Logic's Ignition Staffing Model is {spread_val[1][0]} to {spread_val[1][1]}")
-st.write(nearshore_cb)
 df = pd.DataFrame(spread_val[0], columns=['Location','Project Staffing Percentage'])
 # Update and display bar chart
 updated_bar_chart = create_bar_chart(df)

@@ -11,7 +11,7 @@ class ProjectAdd:
                  #, criticallity
                 , timezone, complexity, expertise, laws
                 , availability, innovation
-                #, nearshore_cb, offshore_cb
+                , nearshore_cb, offshore_cb
                 #, scalability
                 ):
         self.name = name
@@ -27,8 +27,8 @@ class ProjectAdd:
         self.laws = laws
         self.availability = availability
         self.innovation = innovation
-        # self.nearshore_cb = nearshore_cb
-        # self.offshore_cb = offshore_cb
+        self.nearshore_cb = nearshore_cb
+        self.offshore_cb = offshore_cb
         #self.scalability = scalability
 
     def save(self):
@@ -73,11 +73,29 @@ class ProjectAdd:
         near_shore_cost = 140
         off_shore_cost = 110
         on_shore_score = (self.cost * funding_on_shore) + (timezone_on_shore * self.timezone)  + (self.laws*laws_on_shore) + (self.availability*response_on_shore) 
-        near_shore_score = (funding_near_shore*(6-self.cost)) + (timezone_near_shore*(6 - self.timezone)) + (laws_near_shore*(6 - self.laws)) + (response_near_shore*(6 - self.availability)) 
-        off_shore_score = (funding_off_shore*(6-self.cost)) + (timezone_off_shore*(5 - self.timezone))  + (laws_off_shore*(6 - self.laws)) + (response_off_shore*(5 - self.availability)) 
-        on_shore_spread = on_shore_score/(on_shore_score + near_shore_score + off_shore_score)
-        off_shore_spread = off_shore_score/(on_shore_score + near_shore_score + off_shore_score)
-        near_shore_spread = near_shore_score/(on_shore_score + near_shore_score + off_shore_score)
+        near_shore_score = (funding_near_shore*(5-self.cost)) + (timezone_near_shore*(6 - self.timezone)) + (laws_near_shore*(6 - self.laws)) + (response_near_shore*(6 - self.availability)) 
+        off_shore_score = (funding_off_shore*(5-self.cost)) + (timezone_off_shore*(5 - self.timezone))  + (laws_off_shore*(5 - self.laws)) + (response_off_shore*(5 - self.availability)) 
+        if self.nearshore_cb == False and self.offshore_cb == False:
+            on_shore_spread = 1
+        elif (self.nearshore_cb == False and (self.timezone == 5 | self.availability ==5)):
+            on_shore_spread = 1
+        else:
+            on_shore_spread = on_shore_score/(on_shore_score + near_shore_score + off_shore_score)
+        if self.nearshore_cb == False:
+            near_shore_spread = 0
+        elif (self.offshore_cb == False | self.timezone == 5 | self.availability ==5):
+            near_shore_spread = near_shore_score + off_shore_score
+        else:
+            near_shore_spread = near_shore_score/(on_shore_score + near_shore_score + off_shore_score)
+        if self.offshore_cb == True:
+            if (self.timezone == 5 | self.availability == 5):
+                off_shore_spread = 0
+            elif self.nearshore_cb == True:
+                off_shore_spread = near_shore_score
+            else:
+                off_shore_spread = near_shore_score + off_shore_score
+        else:
+            off_shore_spread = 0        
         low_savings_calc = '{:.0%}'.format((1-(((on_shore_cost*on_shore_spread) + (off_shore_cost*off_shore_spread) + (near_shore_cost*near_shore_spread) )/ on_shore_cost))-0.05)
         high_savings_calc = '{:.0%}'.format((1-(((on_shore_cost*on_shore_spread) + (off_shore_cost*off_shore_spread) + (near_shore_cost*near_shore_spread) )/ on_shore_cost))+0.05) 
         return [[('On Shore',on_shore_spread), ('Off Shore',off_shore_spread) , ('Near Shore', near_shore_spread)],(low_savings_calc, high_savings_calc)]
