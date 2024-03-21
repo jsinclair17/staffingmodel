@@ -36,10 +36,9 @@ project_type = st.selectbox("Project Type", ["Data Engineering","Data Migration"
 #st.divider()
 with st.sidebar:
     st.title('Adjust Settings')
-    col1, col2, col3 = st.columns(3)
-    show_output = col1.checkbox('Show Output', value=True)
-    show_plot = col2.checkbox('Show Simulation Plot', value=True)
-    show_bar_chart = col3.checkbox('Show Bar Chart', value=True)
+    col1, col2 = st.columns(2)
+    show_output = col1.checkbox('Near Shore', value=False)
+    show_plot = col2.checkbox('Off Shore', value=False)
 st.sidebar.title('Change Slider Values')
 project_area_names_cost = st.sidebar.slider("Cost", min_value=1, max_value=5, help='Your enagagment funding level has been allocated', key='cost')
 # if project_area_names_cost <3:
