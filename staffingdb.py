@@ -73,7 +73,7 @@ class ProjectAdd:
         near_shore_cost = 140
         off_shore_cost = 110
         on_shore_score = (self.cost * funding_on_shore) + (timezone_on_shore * self.timezone)  + (self.laws*laws_on_shore) + (self.availability*response_on_shore) 
-        near_shore_score = (funding_near_shore*(5-self.cost)) + (timezone_near_shore*(6 - self.timezone)) + (laws_near_shore*(6 - self.laws)) + (response_near_shore*(6 - self.availability)) 
+        near_shore_score = (funding_near_shore*(5-self.cost)) + (timezone_near_shore*(self.timezone)) + (laws_near_shore*(5 - self.laws)) + (response_near_shore*(self.availability)) 
         off_shore_score = (funding_off_shore*(5-self.cost)) + (timezone_off_shore*(5 - self.timezone))  + (laws_off_shore*(5 - self.laws)) + (response_off_shore*(5 - self.availability)) 
         if self.nearshore_cb == False and self.offshore_cb == False:
             on_shore_spread = 1
