@@ -10,7 +10,8 @@ class ProjectAdd:
                  cost, time_to_market
                  #, criticallity
                 , timezone, complexity, expertise, laws
-                , availability, innovation, nearshore_cb, offshore_cb
+                , availability, innovation
+                #, nearshore_cb, offshore_cb
                 #, scalability
                 ):
         self.name = name
@@ -26,8 +27,8 @@ class ProjectAdd:
         self.laws = laws
         self.availability = availability
         self.innovation = innovation
-        self.nearshore_cb = nearshore_cb
-        self.offshore_cb = offshore_cb
+        # self.nearshore_cb = nearshore_cb
+        # self.offshore_cb = offshore_cb
         #self.scalability = scalability
 
     def save(self):
