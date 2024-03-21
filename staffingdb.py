@@ -83,17 +83,17 @@ class ProjectAdd:
             on_shore_spread = on_shore_score/(on_shore_score + near_shore_score + off_shore_score)
         if self.nearshore_cb == False:
             near_shore_spread = 0
-        elif (self.offshore_cb == False | self.timezone == 5 | self.availability ==5):
-            near_shore_spread = near_shore_score + off_shore_score
+        elif (self.nearshore_cb == True and (self.offshore_cb == False | self.timezone == 5 | self.availability ==5)):
+            near_shore_spread = (near_shore_score/(on_shore_score + near_shore_score + off_shore_score) ) + (off_shore_score/(on_shore_score + near_shore_score + off_shore_score))
         else:
             near_shore_spread = near_shore_score/(on_shore_score + near_shore_score + off_shore_score)
         if self.offshore_cb == True:
             if (self.timezone == 5 | self.availability == 5):
                 off_shore_spread = 0
-            elif self.nearshore_cb == True:
-                off_shore_spread = near_shore_score
+            elif (self.nearshore_cb == True and self.offshore_cb == False):
+                off_shore_spread = off_shore_score/(on_shore_score + near_shore_score + off_shore_score)
             else:
-                off_shore_spread = near_shore_score + off_shore_score
+                off_shore_spread = (near_shore_score/(on_shore_score + near_shore_score + off_shore_score) ) + (off_shore_score/(on_shore_score + near_shore_score + off_shore_score))
         else:
             off_shore_spread = 0        
         low_savings_calc = '{:.0%}'.format((1-(((on_shore_cost*on_shore_spread) + (off_shore_cost*off_shore_spread) + (near_shore_cost*near_shore_spread) )/ on_shore_cost))-0.05)
