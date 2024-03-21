@@ -96,7 +96,7 @@ class ProjectAdd:
         elif self.offshore_cb == True and self.nearshore_cb == True:
             off_shore_spread = off_shore_score/(on_shore_score + near_shore_score + off_shore_score)
         elif self.offshore_cb == True and self.nearshore_cb == False:
-            off_shore_spread = off_shore_score/(on_shore_score + near_shore_score + off_shore_score)
+            off_shore_spread = off_shore_score/(on_shore_score + near_shore_score + off_shore_score) + near_shore_score/(on_shore_score + near_shore_score + off_shore_score)
         else:
             off_shore_spread = 0
         low_savings_calc = '{:.0%}'.format((1-(((on_shore_cost*on_shore_spread) + (off_shore_cost*off_shore_spread) + (near_shore_cost*near_shore_spread) )/ on_shore_cost))-0.05)
