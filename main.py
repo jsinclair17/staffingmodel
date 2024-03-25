@@ -174,7 +174,6 @@ def set_value():
     #st.session_state['scalable'] = 1
     st.write(f'Submission was added successfully')
 st.divider()
-st.write(spread_val[0])
 st.write(f"Potential Savings utilizing Thought Logic's Ignition Staffing Model is {spread_val[1][0]} to {spread_val[1][1]}")
 
 df = pd.DataFrame(spread_val[0], columns=['Location','Project Staffing Percentage'])
