@@ -36,9 +36,10 @@ project_type = st.selectbox("Project Type", ["Data Engineering","Data Migration"
 #st.divider()
 with st.sidebar:
     st.title('Global Staffing Options')
+    st.write('Our staffing model includes a mix of onshore, nearshore, and offshore resources by default. Clients can adjust the staffing mix by unchecking the respective boxes for nearshore or offshore options. The default mix prioritizes savings, adjusting based on restrictions or client preferences.')
     col1, col2 = st.columns(2)
-    nearshore_cb = col1.checkbox('Near Shore', value=False, help='Our near shore team are fluent English speakers located in Bogota, Columbia')
-    offshore_cb = col2.checkbox('Off Shore', value=False, help='Our off shore team are fluent English speakers located in Pakistan')
+    nearshore_cb = col1.checkbox('Near Shore', value=True, help='Our near shore team are fluent English speakers located in Bogota, Columbia')
+    offshore_cb = col2.checkbox('Off Shore', value=True, help='Our off shore team are fluent English speakers located in Pakistan')
 st.sidebar.title('Choose Project Priorities')
 project_area_names_cost = st.sidebar.slider("Cost", min_value=1, max_value=5, help='Your enagagment funding level has been allocated', key='cost')
 # if project_area_names_cost <3:
