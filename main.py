@@ -40,7 +40,7 @@ with st.sidebar:
     nearshore_cb = col1.checkbox('Near Shore', value=False, help='Our near shore team are fluent English speakers located in Bogota, Columbia')
     st.write(nearshore_cb)
     offshore_cb = col2.checkbox('Off Shore', value=False, help='Our off shore team are fluent English speakers located in Pakistan')
-    st.write(nearshore_cb)
+    st.write(offshore_cb)
 st.sidebar.title('Choose Project Priorities')
 project_area_names_cost = st.sidebar.slider("Cost", min_value=1, max_value=5, help='Your enagagment funding level has been allocated', key='cost')
 # if project_area_names_cost <3:
