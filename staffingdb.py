@@ -79,7 +79,7 @@ class ProjectAdd:
             on_shore_spread = 1
             off_shore_spread = 0
             near_shore_spread = 0
-        elif (self.nearshore_cb == False and self.offshore_cb == True and (self.timezone ==5 or self.availability ==5)):
+        elif self.nearshore_cb == False and self.offshore_cb == True and (self.timezone ==5 or self.availability ==5):
             on_shore_spread = 1
             off_shore_spread = 0
             near_shore_spread = 0
