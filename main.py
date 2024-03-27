@@ -41,7 +41,7 @@ with st.sidebar:
     nearshore_cb = col1.checkbox('Near Shore', value=True, help='Our near shore team are fluent English speakers located in Bogota, Columbia')
     offshore_cb = col2.checkbox('Off Shore', value=True, help='Our off shore team are fluent English speakers located in Pakistan')
 st.sidebar.title('Choose Project Priorities')
-project_area_names_cost = st.sidebar.slider("Cost", min_value=1, max_value=5, help='Your enagagment funding level has been allocated', key='cost')
+project_area_names_cost = st.sidebar.slider("Savings", min_value=1, max_value=5, help='Your enagagment funding level has been allocated', key='cost')
 # if project_area_names_cost <3:
 #     st.sidebar.write('Conservative Spend')
 # elif project_area_names_cost >=3 and project_area_names_cost <5:
@@ -78,7 +78,7 @@ project_area_names_tz = st.sidebar.slider("Timezone Critical", min_value=1, max_
 # else:
 #     st.write('Required')
 #st.divider()
-project_area_names_complexity = st.sidebar.slider("Complexity", min_value=1, max_value=5, help='Amount of capacity needed to support the initiative' ,key='complex')
+project_area_names_complexity = st.sidebar.slider("Go To Market Strategy", min_value=1, max_value=5, help='Amount of capacity needed to support the initiative' ,key='complex')
 # if project_area_names_complexity <3:
 #     st.write('Individual Contributor')
 # elif project_area_names_complexity >=3 and project_area_names_complexity <5:
@@ -98,7 +98,7 @@ project_area_names_expertise = st.sidebar.slider("Skill Level", min_value=1, max
 # else:
 #     st.write('Subject Matter Expert')
 #st.divider()
-project_area_names_laws = st.sidebar.slider("Laws & Regulation", min_value=1, max_value=5, help='Barriers for using offshore resources for work', key='laws')
+project_area_names_laws = st.sidebar.slider("Team Size", min_value=1, max_value=5, help='Barriers for using offshore resources for work', key='laws')
 # if project_area_names_laws <3:
 #     st.write('Lenient')
 # elif project_area_names_laws >=3 and project_area_names_laws <5:
@@ -122,7 +122,7 @@ project_area_names_accessibility = st.sidebar.slider("Response Time", min_value=
 # else:
 #     st.write('Fully accessible during Operating Hours')
 #st.divider()
-project_area_names_innovate = st.sidebar.slider("Advanced Tech", min_value=1, max_value=5, help='Describe the need to be more Strategic or Tactical', key='innovate')
+project_area_names_innovate = st.sidebar.slider("Innovation & Process Maturity", min_value=1, max_value=5, help='Describe the need to be more Strategic or Tactical', key='innovate')
 # if project_area_names_innovate <3:
 #     st.write('Routine')
 # elif project_area_names_innovate >=3 and project_area_names_innovate <5:
