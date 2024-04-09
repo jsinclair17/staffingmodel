@@ -53,7 +53,7 @@ project_area_names_cost = st.sidebar.slider("Savings", min_value=1, max_value=5,
 # else:
 #     st.sidebar.write('Large Investment Made')
 #st.divider()
-project_area_names_speed = st.sidebar.slider("Speed", min_value=1, max_value=5, help='Describe the level of planning to deliver product', key='speed')
+project_area_names_speed = st.sidebar.slider("Speed", min_value=1, max_value=5, help='Describe the amount of capacity to deliver the product', key='speed')
 # if project_area_names_speed <3:
 #     st.write('Proof of Concept')
 # elif project_area_names_speed >=3 and project_area_names_speed <5:
@@ -78,7 +78,7 @@ project_area_names_tz = st.sidebar.slider("Timezone Critical", min_value=1, max_
 # else:
 #     st.write('Required')
 #st.divider()
-project_area_names_complexity = st.sidebar.slider("Go To Market Strategy", min_value=1, max_value=5, help='Amount of capacity needed to support the initiative' ,key='complex')
+project_area_names_complexity = st.sidebar.slider("Go To Market Strategy", min_value=1, max_value=5, help='Describe the level of planning needed to deliver the product' ,key='complex')
 # if project_area_names_complexity <3:
 #     st.write('Individual Contributor')
 # elif project_area_names_complexity >=3 and project_area_names_complexity <5:
@@ -98,7 +98,7 @@ project_area_names_expertise = st.sidebar.slider("Skill Level", min_value=1, max
 # else:
 #     st.write('Subject Matter Expert')
 #st.divider()
-project_area_names_laws = st.sidebar.slider("Team Size", min_value=1, max_value=5, help='Barriers for using offshore resources for work', key='laws')
+project_area_names_laws = st.sidebar.slider("Team Size", min_value=1, max_value=5, help='Describe the level of capacity needed to support the initiative', key='laws')
 # if project_area_names_laws <3:
 #     st.write('Lenient')
 # elif project_area_names_laws >=3 and project_area_names_laws <5:
